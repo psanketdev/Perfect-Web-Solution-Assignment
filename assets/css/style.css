@@ -1,0 +1,633 @@
+@charset "utf-8";
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+input[type="radio"] {
+  vertical-align: text-bottom;
+}
+
+label,
+input[type="button"],
+input[type="submit"],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em {
+  font-style: italic;
+}
+
+img {
+  width: 100%;
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup {
+  top: -0.7em;
+}
+sub {
+  bottom: -0.25em;
+}
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after {
+  clear: both;
+}
+.cf {
+  *zoom: 1;
+}
+
+/*for all*/
+body {
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+:root {
+  --color-yellow: #fdc741;
+  --color-blue: #002e62;
+  --color-black: #333333;
+  --color-white: #ffffff;
+  --color-gray: #b6b6b6;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+/*for wrapper*/
+.wrapper {
+  max-width: 1360px;
+  width: 61%;
+  margin: 0 auto;
+}
+/*=================================
+  Header styling starts here
+=================================*/
+.facebook::before {
+  content: "\f09a";
+}
+.tumblr::before {
+  content: "\f173";
+}
+.linkedin::before {
+  content: "\f0e1";
+}
+.instagram::before {
+  content: "\f16d";
+}
+.youtube::before {
+  content: "\f16a";
+}
+.phone:before {
+  content: "\f095";
+}
+.fax:before {
+  content: "\f02f";
+}
+.email:before {
+  content: "\f0e0";
+}
+.top-header .wrapper .headerContact {
+  width: 57%;
+}
+.top-header .wrapper .headerIcons {
+  width: 18%;
+}
+
+.top-header {
+  width: 100%;
+  padding: 6px 0;
+  background-color: var(--color-blue);
+}
+
+.icon {
+  display: inline-block;
+  line-height: 15px;
+  text-indent: -9999px;
+}
+
+.icon::before {
+  float: left;
+  font: normal 14px "FontAwesome";
+  text-indent: 0;
+}
+
+.headerContact .icon::before {
+  font-size: 16px;
+}
+
+.headerContact a {
+  color: var(--color-white);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.top-header .wrapper > div,
+.headerContact,
+.headerIcons,
+.headerContact li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.top-header .wrapper > div,
+.headerContact,
+.headerIcons {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.headerContact .icon {
+  font-size: 20px;
+  margin-right: 12px;
+  color: var(--color-yellow);
+}
+
+.headerIcons .icon {
+  width: 10px;
+  height: 10px;
+  padding: 7px;
+  border-radius: 50%;
+  background-color: var(--color-yellow);
+  color: var(--color-blue);
+  text-align: center;
+}
+
+/* Bottom header styling */
+header {
+  width: 100%;
+  padding: 6px 0;
+}
+
+header .wrapper,
+header .nav-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav {
+  width: 45%;
+}
+
+.form-group {
+  position: relative;
+}
+.search::before {
+  content: "\f002";
+}
+
+.hamburger {
+  width: 27px;
+  float: right;
+  display: none;
+  position: relative;
+  z-index: 12;
+  transition: all 0.8s ease-out;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  margin: 4px 0;
+  border-radius: 50px;
+  display: block;
+  background-color: #000;
+  text-indent: -9999px;
+  transition: all 0.8s ease-in-out;
+}
+
+.nav-link a {
+  border-bottom: 3px solid transparent;
+  color: var(--color-black);
+  font-size: 13px;
+  text-transform: capitalize;
+}
+
+.nav-link li:not(:last-of-type) {
+  margin-right: 10px;
+}
+
+.nav-link li {
+  position: relative;
+}
+
+.nav-link li a.active-menu {
+  font-weight: bold;
+}
+
+.nav-link li a.active-menu::after {
+  content: "";
+  width: 100%;
+  border-bottom: 26px solid var(--color-yellow);
+  position: absolute;
+  bottom: -28px;
+  left: 0;
+}
+
+.search-form {
+  transition: 0.5s ease-in-out;
+}
+
+.search {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+input {
+  padding: 5px 8px;
+  border: 1px solid #808080;
+  border-radius: 8px;
+  outline: none;
+}
+
+input::-webkit-input-placeholder {
+  color: var(--color-gray);
+  font-size: 10px;
+}
+
+input::placeholder {
+  color: var(--color-gray);
+  font-size: 10px;
+}
+
+/*=================================
+  Header styling ends here
+=================================*/
+
+/*=================================
+  main styling starts here
+=================================*/
+.button .arrow:before {
+  content: "\f178";
+}
+
+.banner {
+  position: relative;
+  background-image: url("https://via.placeholder.com/1349x425/392846/392846.png?text=Banner");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.banner-content {
+  padding: 146px 0 126px 0;
+  color: var(--color-white);
+}
+
+h2 {
+  font: bold 25px sans-serif;
+  text-transform: uppercase;
+}
+
+.banner-content p {
+  margin: 15px auto;
+  line-height: 23px;
+}
+
+.button a {
+  width: 160px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.button .button-text {
+  width: 80%;
+  padding: 7px 0px;
+  border-radius: 5px 0px 0px 5px;
+  display: inline-block;
+  background-color: var(--color-yellow);
+  color: var(--color-blue);
+  font: bold 11px sans-serif;
+  text-transform: capitalize;
+}
+
+.arrow {
+  border-radius: 0px 5px 5px 0px;
+  padding: 6px;
+  display: inline-block;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+/*=================================
+  main styling ends here
+=================================*/
+
+/*=================================
+  footer styling starts here
+=================================*/
+
+/*=================================
+  footer styling ends here
+=================================*/
+
+/*media query starts*/
+/*media query for 1024px starts here*/
+@media only screen and (max-width: 1024px) {
+  .top-header .wrapper .headerContact {
+    width: 74%;
+  }
+  .top-header .wrapper .headerIcons {
+    width: 24%;
+  }
+
+  .search {
+    right: 3%;
+  }
+
+  header .wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .search-form {
+    width: 55%;
+    margin-top: 35px;
+  }
+
+  input {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .headerContact .icon {
+    margin-right: 8px;
+  }
+
+  header nav {
+    margin-top: 25px;
+    width: 95%;
+  }
+}
+
+/*media query for 995px starts here*/
+@media only screen and (max-width: 995px) {
+}
+
+@media only screen and (max-width: 768px) {
+  .top-header,
+  .search-form {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 3%;
+    right: 5%;
+  }
+
+  header .nav-link {
+    width: 100%;
+    height: 100vh;
+    background-color: #d35400;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    letter-spacing: 2px;
+    clip-path: circle(0 at 100% 0);
+    transition: all 0.7s ease-in;
+  }
+
+  nav .nav-active {
+    clip-path: circle(200% at 100% 0);
+  }
+
+  .hamburger-active {
+    z-index: 20;
+    transition: all 0.8s ease-out;
+    animation: rotate 0.7s ease-in-out;
+  }
+
+  .hamburger-active span:nth-of-type(1) {
+    transform: rotate(125deg) translate(5px);
+    background-color: #f1f2f6;
+  }
+
+  .hamburger-active span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  .hamburger-active span:nth-of-type(3) {
+    transform: rotate(-125deg) translate(5px);
+    background-color: #f1f2f6;
+  }
+
+  .nav-link li {
+    margin-bottom: 30px;
+  }
+
+  .nav-link li a {
+    font-size: 17px;
+    color: #fff;
+  }
+
+  .nav-link li a.active-menu::after {
+    bottom: -5px;
+    border-bottom: 5px solid var(--color-yellow);
+  }
+
+  form.search-active {
+    width: 30%;
+    margin: auto;
+    position: absolute;
+    bottom: 20%;
+    z-index: 10;
+    margin-top: 0;
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  form.search-active {
+    width: 45%;
+  }
+
+  h2 {
+    font: bold 16px sans-serif;
+  }
+
+  .banner-content p {
+    font-size: 14px;
+  }
+
+  form.search-active {
+    width: 40%;
+    bottom: 23%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  h2 {
+    font: bold 15px sans-serif;
+  }
+
+  .banner-content p {
+    font-size: 12px;
+  }
+
+  form.search-active {
+    width: 55%;
+    bottom: 20%;
+  }
+}
